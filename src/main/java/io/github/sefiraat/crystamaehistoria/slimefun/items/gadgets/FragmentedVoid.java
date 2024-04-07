@@ -1,5 +1,8 @@
 package io.github.sefiraat.crystamaehistoria.slimefun.items.gadgets;
 
+import dev.rosewood.rosestacker.api.RoseStackerAPI;
+import dev.rosewood.rosestacker.stack.StackedItem;
+import io.github.sefiraat.crystamaehistoria.managers.SupportedPluginManager;
 import io.github.sefiraat.crystamaehistoria.utils.GeneralUtils;
 import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
@@ -73,7 +76,12 @@ public class FragmentedVoid extends SlimefunItem {
                         if (possibleItem.isPresent()) {
                             item.setItemStack(possibleItem.get());
                         } else {
-                            item.remove();
+                            if (SupportedPluginManager.isRoseStacker()) {
+                                final StackedItem roseStack = RoseStackerAPI.getInstance().getStackedItem(item);
+                                roseStack.setStackSize(roseStack.getStackSize() - 64);
+                            } else {
+                                item.remove();
+                            }
                         }
                     }
                 }
