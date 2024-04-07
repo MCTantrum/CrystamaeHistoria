@@ -134,6 +134,7 @@ public class Gadgets {
 
         final ItemStack uniqueVoid = Materials.CRYSTAL_MAP.get(StoryRarity.UNIQUE).get(StoryType.VOID).getItem();
         final ItemStack glass = new ItemStack(Material.GLASS);
+        final ItemStack milk = new ItemStack(Material.MILK_BUCKET);
 
         // Abstraction Lamp
         RecipeItem abstractionLampRecipe = new RecipeItem(
@@ -769,7 +770,7 @@ public class Gadgets {
             RecipeType.ENHANCED_CRAFTING_TABLE,
             new ItemStack[]{
                 glass, null, glass,
-                glass, CrystaStacks.GLASS_OF_MILK, glass,
+                glass, milk, glass,
                 glass, glass, glass
             }
         );
