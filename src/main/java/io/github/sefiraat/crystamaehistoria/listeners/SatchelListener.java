@@ -1,5 +1,7 @@
 package io.github.sefiraat.crystamaehistoria.listeners;
 
+import dev.rosewood.rosestacker.api.RoseStackerAPI;
+import dev.rosewood.rosestacker.stack.StackedItem;
 import io.github.sefiraat.crystamaehistoria.slimefun.items.materials.Crystal;
 import io.github.sefiraat.crystamaehistoria.slimefun.items.tools.satchel.CrystamageSatchel;
 import io.github.sefiraat.crystamaehistoria.utils.ParticleUtils;
@@ -44,6 +46,8 @@ public class SatchelListener implements Listener {
                         player.sendMessage(ThemeType.WARNING.getColor() + "You have stacked Crystamae Satchels. They will not work until unstacked.");
                         return;
                     }
+                    final StackedItem roseStack = RoseStackerAPI.getInstance().getStackedItem(item);
+                    itemStack.setAmount(roseStack.getStackSize());
 
                     if (crystamageSatchel.tryAddItem(possibleSatchel, itemStack, crystal)) {
                         final java.awt.Color baseColor = ThemeType.getByType(crystal.getType()).getColor().getColor();
