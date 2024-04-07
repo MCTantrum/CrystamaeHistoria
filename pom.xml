@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.github.sefiraat.crystamaehistoria</groupId>
     <artifactId>CrystamaeHistoria</artifactId>
-    <version>MODIFIED</version>
+    <version>MCT</version>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -191,8 +191,9 @@
         <dependency>
             <groupId>io.github.sefiraat</groupId>
             <artifactId>networks</artifactId>
-            <version>MODIFIED_1.0.7</version>
-            <scope>provided</scope>
+            <version>MCT</version>
+            <scope>system</scope>
+            <systemPath>${pom.basedir}/libs/Networks vMCT.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>com.elmakers.mine.bukkit</groupId>
@@ -209,7 +210,7 @@
         <dependency>
             <groupId>dev.rosewood</groupId>
             <artifactId>rosestacker</artifactId>
-            <version>1.5.1</version>
+            <version>1.5.20</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
